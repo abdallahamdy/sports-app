@@ -1,4 +1,4 @@
-# sports-app
+# sports-spot
 
 Ibrahim Imran
 Abdalla Hamdy
