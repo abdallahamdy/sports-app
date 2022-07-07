@@ -1,0 +1,181 @@
+<!doctype html>  
+<html lang="fr">  
+  
+    <head>  
+        <meta charset="utf-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>SPORTS SPOT</title>  
+        <link rel="stylesheet" href="./assets/css/style.css" />  
+    </head>  
+  
+    <body>  
+
+        <header>
+
+        </header>
+        <div class ="title-sports-spot" id ="title-sports-spot">
+                <h1>SPORTS SPOT</h1>
+        </div>
+
+        <form class = "form-sport-search" id ="form-sport-search">
+            <label for ="input-text" id ="label-text" class="label-text">Enter your search :</label>
+            <input type ="text" id ="input-text" class ="input-text" placeholder="Enter your search">
+            <input type ="submit" class ="button-submit" id ="button-submit" value ="submit">
+        </form>
+
+<!-- sub title game preview stats-->
+<div class ="sub-title-games-stats" >
+    <div class ="sub-title-past-previous-game" id ="sub-title-previous-futur-game">
+        <h3>Previous 10 games</h3>
+    </div>
+
+    <div class ="sub-title-past-futur-game" id ="sub-title-past-futur-game">
+        <h3>Next 10 games</h3>
+    </div>
+</div>
+<!-- past and futur game layout--> 
+        <main class ="past-futur-game" id ="past-futur-game">
+
+
+
+
+<!-- game 1-->           
+            <div class ="previous-game" id ="previous-game1">
+                <table class = "previous-game-table" id ="previous-game-table1">
+                    <tbody class = "game-event-info" id ="game-event-info-previous1">
+                        <tr class = "game-event-info-first-row">
+<!--team logo left side and team name column-->
+                            <th scope ="col" class ="logo-left-cell">
+                                <div class ="away-status-name-logo" id="away-status-name-logo-pg1">
+                                    <img class ="logo-left-img" id ="logo-left-img-pg1" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"><div><span>Away Team</span></div></th>
+                                </div>
+ <!--Game stats column for the date, time, teams scores and weather-->       
+                             <th scope ="col" class ="game-stats">
+                                <div class ="game-stats-info" id ="game-stats-info-pg1">
+                                    <div class = "date-time-data" id ="date-time-data-pg1">
+                                        <span class="date-data" id ="date-data-pg1"> Date</span>
+                                        <span class="time-data" id ="time-data-pg1" > Time</span>
+                                    </div>
+                                    <div>
+                                        <span class="score-away-team-data" id ="score-away-team-data-pg1" >0</span>
+                                        <span class="score-separator" id ="score-separator-pg1" > -</span>
+                                        <span class="score-home-team-data" id ="score-home-team-data-pg1" > 0</span>
+                                    </div>
+                                    <div><span class="weather-data" id ="weather-data-pg1"> Current weather</span></div>
+                                </div>
+                            </th>
+<!--team logo right side and team name column-->
+                           <th scope ="col" class ="logo-right-cell">
+                            <div class ="home-status-name-logo" id="home-status-name-logo-pg1">
+                                <img class ="logo-right-img" id = "logo-right-img-pg1" height= "48" src="./assets/images/nfl.png" alt="NFL logo"><div><span>Home Team</span></div></th>
+                            </div>
+                        </tr>
+                        <tr class = "game-event-info-second-row">
+ <!--Game city location and which stadium game was played-->                           
+                            <td class = "Stadium-played">   <div class ="location-info" id ="location-info-pg1">
+                                                                <span class = "stadium-location" id ="stadium-location-pg1">Stadium game played</span>
+                                                                <span class = "city-location" id = "city-location-pg1">City Name</span>
+                                                            </div>
+                            </td> 
+                        </tr>
+                 </tbody>
+            </table>
+        </div>
+
+            <div class ="next-game" id ="next-game1">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+<!-- game 2-->           
+            <div class ="previous-game" id ="previous-game2">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game2">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+            
+            
+<!-- game 3-->            
+            <div class ="previous-game" id ="previous-game3">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game3">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>  
+
+<!-- game 4-->           
+            <div class ="previous-game" id ="previous-game4">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game4">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+<!-- game 5-->           
+            <div class ="previous-game" id ="previous-game5">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game5">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+<!-- game 6-->           
+            <div class ="previous-game" id ="previous-game6">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game6">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+<!-- game 7-->           
+            <div class ="previous-game" id ="previous-game7">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game7">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+<!-- game 8-->           
+            <div class ="previous-game" id ="previous-game8">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game8">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+<!-- game 9-->           
+            <div class ="previous-game" id ="previous-game9">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game9">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+<!-- game 10-->           
+            <div class ="previous-game" id ="previous-game10">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div>
+
+            <div class ="next-game" id ="next-game10">
+                <img height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> <img height= "48" src="./assets/images/nfl.png" alt="NFL logo">
+            </div> 
+
+        </main>
+
+
+
+        <footer>
+            <a href="https://github.com/abdallahamdy/sports-spot"></a>
+        </footer>
+        <script src="./assets/js/script.js"></script> 
+    </body>  
+</html>  
+ 

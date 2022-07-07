@@ -1,0 +1,264 @@
+*::before,   
+*::after {   
+  box-sizing: border-box;   
+}   
+   
+html, 
+ body {  
+  height: 100%;  
+  margin: 0;  
+  padding: 0;  
+  font-size: 120%;  
+  min-width: 50%;  
+  max-width: none;  
+}  
+   
+body   
+{  
+  background-color: #fff;  
+  text-align: center;  
+} 
+
+/* title web site*/
+.title-sports-spot
+{
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+/* input csss*/
+
+.input-text::placeholder
+{
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
+}
+
+.button-submit
+ {
+    margin: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    background-color: rgb(9, 38, 202);
+    color: white;
+    border-radius: 8px;
+ }
+
+ .button-submit:hover 
+ {
+    box-shadow: 1px 1px #301c15;
+    background-color: rgb(10, 139, 161);
+    border: 2px solid rgb(0, 161, 236);
+    transition: all;
+ }
+
+
+/* futur and past game main*/
+.past-futur-game
+{
+    display: flex;
+    height: 1000px;
+    margin: 10%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* previous game layout*/
+.previous-game
+{
+    border: 2px solid gray;
+    display: flex;
+    height: 200px;
+    width: 500px;
+    
+    
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+
+    
+}
+
+.game-stats-info
+{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+td.Stadium-played div
+{
+    width: 100%;
+}
+
+table.previous-game-table
+{
+    
+    height: 100px;
+    width: 500px;
+    border-collapse: collapse;
+    
+}
+
+th.logo-left-cell
+{
+    
+    width: 25%;
+}
+
+th.logo-right-cell
+{
+    
+    width: 25%;
+}
+
+th.game-stats
+{
+    
+     width: 50%;
+    
+}
+
+td.Stadium-played
+{
+    text-align: center;
+    width: 100%;
+}
+
+
+
+/* futur game layout*/
+.next-game
+{
+    border: 2px solid gray;
+    display: flex;
+    height: 200px;
+    width: 500px;
+    
+    
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+
+/*need to change margin*/
+
+.previous-game img
+{
+    /*margin-right: 70%;*/
+    box-sizing: border-box;
+}
+
+.next-game img
+{
+    /*margin-right: 70%;*/
+    box-sizing: border-box; 
+    
+}
+
+
+
+
+
+
+/* previous game table*/
+
+.game-event-info
+{
+    font-size: 0.8rem;
+}
+
+.previous-game-table
+{
+    
+    border: 2px solid gray;
+    margin:0 auto;
+    border-spacing: 2px;
+    border-color:dimgrey
+}
+
+.logo-left-img 
+{
+    margin-left: 0.5rem;
+}
+
+.game-event-info-first-row
+{
+    height: 120px;
+    
+}
+
+.location-info
+{
+    padding-left: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.away-status-name-logo
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home-status-name-logo
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+td.game-stats
+{
+    text-align: center;
+}
+
+.game-event-info-second-row
+{
+    height:20px;
+    margin-right: 50%;
+}
+
+
+td.Stadium-played
+{
+    width: 50%;
+}
+
+td.city-name
+{
+    width: 50%;
+}
+
+
+
+div.sub-title-games-stats
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
