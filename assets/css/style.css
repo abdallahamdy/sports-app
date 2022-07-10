@@ -19,21 +19,41 @@ body
   text-align: center;  
 } 
 
-/* title web site*/
-.title-sports-spot
+/* header content with a background picture*/
+.header-content
 {
+    height: 30em;
+    width: 80em;
+    background-image: url("../images/8cGbezaXi.jpg");
+    background-size: cover;
+    object-fit: cover;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    z-index: 20;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    font-size: 2rem;
+    color: white;
 }
 
-/* input csss*/
+/* title web site*/
+.header-content h1
+{
+    font-size: 10rem;
+    text-shadow: 5px 5px 10px  black;
+}
 
+/* input css hint text color*/
 .input-text::placeholder
 {
     background-color: rgba(255, 255, 255, 0.5);
     opacity: 0.5;
 }
 
+/* submit button */
 .button-submit
  {
     margin: 10px;
@@ -47,6 +67,7 @@ body
     border-radius: 8px;
  }
 
+ /* hover the button submit behaviour*/
  .button-submit:hover 
  {
     box-shadow: 1px 1px #301c15;
@@ -55,210 +76,29 @@ body
     transition: all;
  }
 
-
-/* futur and past game main*/
-.past-futur-game
+/* game table stats layout*/
+.game-table-stats
 {
+    font: .8em sans-serif;
+    border: 2px solid gray;
     display: flex;
-    height: 1000px;
-    margin: 10%;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: space-between;
-    justify-content: space-between;
+    height: 200px;
+    width: 500px;
     align-items: center;
-}
-
-/* previous game layout*/
-.previous-game
-{
-    border: 2px solid gray;
-    display: flex;
-    height: 200px;
-    width: 500px;
-    
-    
-    align-items: baseline;
     margin-bottom: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    align-content: space-around;
-    justify-content: space-around;
-
-    
+    align-content: center;
+    justify-content: space-evenly;
 }
 
-.game-stats-info
+
+/* footer layout to center the text*/
+.footer-layout
 {
-    display: flex;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: space-between;
-}
-
-td.Stadium-played div
-{
-    width: 100%;
-}
-
-table.previous-game-table
-{
-    
-    height: 100px;
-    width: 500px;
-    border-collapse: collapse;
-    
-}
-
-th.logo-left-cell
-{
-    
-    width: 25%;
-}
-
-th.logo-right-cell
-{
-    
-    width: 25%;
-}
-
-th.game-stats
-{
-    
-     width: 50%;
-    
-}
-
-td.Stadium-played
-{
-    text-align: center;
-    width: 100%;
-}
-
-
-
-/* futur game layout*/
-.next-game
-{
-    border: 2px solid gray;
-    display: flex;
-    height: 200px;
-    width: 500px;
-    
-    
+    align-content: space-around;
     align-items: baseline;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: space-around;
-    justify-content: space-around;
-}
-
-
-/*need to change margin*/
-
-.previous-game img
-{
-    /*margin-right: 70%;*/
-    box-sizing: border-box;
-}
-
-.next-game img
-{
-    /*margin-right: 70%;*/
-    box-sizing: border-box; 
-    
-}
-
-
-
-
-
-
-/* previous game table*/
-
-.game-event-info
-{
-    font-size: 0.8rem;
-}
-
-.previous-game-table
-{
-    
-    border: 2px solid gray;
-    margin:0 auto;
-    border-spacing: 2px;
-    border-color:dimgrey
-}
-
-.logo-left-img 
-{
-    margin-left: 0.5rem;
-}
-
-.game-event-info-first-row
-{
-    height: 120px;
-    
-}
-
-.location-info
-{
-    padding-left: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.away-status-name-logo
-{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.home-status-name-logo
-{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-td.game-stats
-{
-    text-align: center;
-}
-
-.game-event-info-second-row
-{
-    height:20px;
-    margin-right: 50%;
-}
-
-
-td.Stadium-played
-{
-    width: 50%;
-}
-
-td.city-name
-{
-    width: 50%;
-}
-
-
-
-div.sub-title-games-stats
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
