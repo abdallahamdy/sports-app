@@ -45,6 +45,6 @@ You can have access to the resources on our Sports Spot Web Page [this is the li
 
 ## The Web Developer for Sports Spot are:
 
-Ibrahim Imran
-Abdalla Hamdy
-Miguel Jerome
+* Ibrahim Imran
+* Abdalla Hamdy
+* Miguel Jerome
