@@ -27,7 +27,7 @@
         - [materialize](./assets/js/materialize.js)
         - [materialize-min](./assets/js/materialize.min.js)
 * html
-        - [index](index1.html)
+        - [index](/index.html)
 
 ### Project outside Resources used
 * css responsive front-end framework
