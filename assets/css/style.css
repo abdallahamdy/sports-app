@@ -100,5 +100,5 @@ body
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
-    align-items: baseline;
+    align-items: stretch;
 }
