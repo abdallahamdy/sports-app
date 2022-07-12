@@ -1,924 +1,181 @@
-<!doctype html>  
-<html lang="fr">  
-  
-    <head>  
-        <meta charset="utf-8">  
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-        <title>SPORTS SPOT</title>  
+<!doctype html>
+<html lang="fr">
 
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="./assets/css/materialize.css"  media="screen,projection"/>   
-      <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>  
-      <!--our custom css file is style.css-->
-        <link rel="stylesheet" href="./assets/css/style.css" />  
-    </head>  
-  
-    <body> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTS SPOT</title>
 
-<!-- main responsive CSS framework container for this page-->
-        <div class ="container">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
+    <!--our custom css file is style.css-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!--for github icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- main responsive CSS framework container for this page-->
+    <div class="container">
 
 
-<!-- header content for this page with a title and background picture-->           
-                <header class ="collection-header">
-                    <div class ="collapsible-header">
-                        <div class = "header-content">
-                            <h1>SPORTS SPOT</h1> 
-                         </div>
-                    </div>
-                </header>
-         
-<!-- input content that allows the user can enter his search by confirming his search with submit button--> 
-            <div class = "row" id ="form-sport-search"></div>
-                <div class = "col s12">
-                    <label for ="input-text" id ="label-text" class="label-text">Enter your search </label>
-                    <input type ="text" id ="input-text" class ="input-text" placeholder="Enter your search">
-                    <input type ="submit" class ="button-submit" id ="button-submit" value ="Submit">
-                </div>
+        <!-- header content for this page with a title and background picture-->
+        <div class="collection-header">
+            <!-- <div class="collapsible-header"> -->
+                <div class="header-content">
+                    <h1>SPORTS SPOT</h1>
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!-- input content that allows the user can enter his search by confirming his search with submit button-->
+        <div class="row" id="form-sport-search"></div>
+        <div class="col s12">
+            <input type="text" id="input-text" class="input-text" placeholder="Enter your search">
+            <button type="submit" class="button-submit indigo lighten-1" id="button-submit" value="Submit">Submit </button>
+        </div>
+    </div>
+
+    <!--row for the sub title game preview table stats -->
+
+    <div class="row ">
+
+        <!--div column previous game -->
+        <div class="grid-example col s12 m6">
+            <div class="sub-title-past-previous-game" id="sub-title-previous-futur-game">
+                <h3>Previous 10 games</h3>
             </div>
 
- <!--row for the sub title game preview table stats -->
-
-            <div class ="row ">
-
-<!--div column previous game -->
-                <div class ="grid-example col s12 m6" >
-                        <div class ="sub-title-past-previous-game" id ="sub-title-previous-futur-game">
-                            <h3>Previous 10 games</h3>
-                         </div>
-
-<!--game#1 previous game table-->
-                    <div class="row">
-                        <div class ="game-table-stats" id ="previous-game1">
-<!-- away team logo left side and team name column-->
-                            <div class="col s12 m4 l8">
-                                    <img class ="circle" id ="logo-left-img-pg1" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-                                <div>
-                                    <span class ="name-away-team" id ="name-away-team-pg1">Away Team</span>
-                                </div>
-                            </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-                            <div class="col s12 m4 l8">
-                                <div class = "date-time-data" id ="date-time-data-pg1">
-                                    <span class="date-data" id ="date-data-pg1"> Date</span>
-                                    <span class="time-data" id ="time-data-pg1"> Time</span>
-                                </div>
-                                <div>
-                                    <span class="score-away-team-data" id ="score-away-team-data-pg1">0</span>
-                                    <span class="score-separator" id ="score-separator-pg1"> -</span>
-                                    <span class="score-home-team-data" id ="score-home-team-data-pg1" > 0</span>
-                                </div>
-                                <div>
-                                    <span class="weather-data" id ="weather-data-pg1"> Current weather</span>
-                                </div>
-                                <div>
-                                    <span class = "stadium-location" id ="stadium-location-pg1">Stadium name</span>
-                                    <span class = "city-location" id = "city-location-pg1">City Name</span>
-                                 </div>
-                            </div>
- <!-- home team logo right side and team name column-->                          
-                            <div class="col s12 m4 l8">
-                                    <img class ="circle" id ="logo-right-img-pg1" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-                                <div>
-                                    <span class ="name-home-team" id ="name-home-team-pg1">Home Team</span>
-                                </div>
-                            </div>
-                        
+            <!--game#1 previous game table-->
+            <div class="row">
+                <div class="game-table-stats" id="previous-game1">
+                    <!-- away team logo left side and team name column-->
+                    <div class="col s12 m4 l8">
+                        <img class="circle" id="logo-left-img-pg1" height="48" src="./assets/images/nfl.png"
+                            alt="NFL logo">
+                        <div>
+                            <span class="name-away-team" id="name-away-team-pg1">Away Team</span>
                         </div>
-               
+                    </div>
+                    <!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->
+                    <div class="col s12 m4 l8">
+                        <div class="date-time-data" id="date-time-data-pg1">
+                            <span class="date-data" id="date-data-pg1"> Date</span>
+                            <span class="time-data" id="time-data-pg1"> Time</span>
+                        </div>
+                        <div>
+                            <span class="score-away-team-data" id="score-away-team-data-pg1">0</span>
+                            <span class="score-separator" id="score-separator-pg1"> -</span>
+                            <span class="score-home-team-data" id="score-home-team-data-pg1"> 0</span>
+                        </div>
+                        <div>
+                            <span class="weather-data" id="weather-data-pg1"> Current weather</span>
+                        </div>
+                        <div>
+                            <span class="stadium-location" id="stadium-location-pg1">Stadium name</span>
+                            <span class="city-location" id="city-location-pg1">City Name</span>
+                        </div>
+                    </div>
+                    <!-- home team logo right side and team name column-->
+                    <div class="col s12 m4 l8">
+                        <img class="circle" id="logo-right-img-pg1" height="48" src="./assets/images/nfl.png"
+                            alt="NFL logo">
+                        <div>
+                            <span class="name-home-team" id="name-home-team-pg1">Home Team</span>
+                        </div>
                     </div>
 
-<!--game#2  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game2">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg2" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg2">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg2">
-                <span class="date-data" id ="date-data-pg2"> Date</span>
-                <span class="time-data" id ="time-data-pg2"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg2">0</span>
-                <span class="score-separator" id ="score-separator-pg2"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg2" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg2"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg2">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg2">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg2" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg2">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
+                </div>
 
-</div>
+            </div>
 
-<!--game#3  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game3">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg3" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg3">Away Team</span>
-            </div>
         </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg3">
-                <span class="date-data" id ="date-data-pg3"> Date</span>
-                <span class="time-data" id ="time-data-pg3"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg3">0</span>
-                <span class="score-separator" id ="score-separator-pg3"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg3" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg3"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg3">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg3">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg3" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg3">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
 
-</div>
+        <!--div column futur game -->
+        <div class="grid-example col s12 m6">
+            <div class="sub-title-past-futur-game" id="sub-title-past-futur-game">
+                <h3>Next 10 games</h3>
+            </div>
 
-<!--game#4  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game4">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg4" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg4">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg4">
-                <span class="date-data" id ="date-data-pg4"> Date</span>
-                <span class="time-data" id ="time-data-pg4"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg4">0</span>
-                <span class="score-separator" id ="score-separator-pg4"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg4" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg4"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg4">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg4">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg4" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg4">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
+            <!--game#1 futur game table-->
+            <div class="row">
+                <div class="game-table-stats" id="futur-game1">
+                    <!-- away team logo left side and team name column-->
+                    <div class="col s12 m4 l8">
+                        <img class="circle" id="logo-left-img-fg1" height="48" src="./assets/images/nfl.png"
+                            alt="NFL logo">
+                        <div>
+                            <span class="name-away-team" id="name-away-team-fg1">Away Team</span>
+                        </div>
+                    </div>
+                    <!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->
+                    <div class="col s12 m4 l8">
+                        <div class="date-time-data" id="date-time-data-fg1">
+                            <span class="date-data" id="date-data-fg1"> Date</span>
+                            <span class="time-data" id="time-data-fg1"> Time</span>
+                        </div>
+                        <div>
+                            <span class="score-away-team-data" id="score-away-team-data-fg1">0</span>
+                            <span class="score-separator" id="score-separator-fg1"> -</span>
+                            <span class="score-home-team-data" id="score-home-team-data-fg1"> 0</span>
+                        </div>
+                        <div>
+                            <span class="weather-data" id="weather-data-fg1"> Current weather</span>
+                        </div>
+                        <div>
+                            <span class="stadium-location" id="stadium-location-fg1">Stadium name</span>
+                            <span class="city-location" id="city-location-fg1">City Name</span>
+                        </div>
+                    </div>
+                    <!-- home team logo right side and team name column-->
+                    <div class="col s12 m4 l8">
+                        <img class="circle" id="logo-right-img-fg1" height="48" src="./assets/images/nfl.png"
+                            alt="NFL logo">
+                        <div>
+                            <span class="name-home-team" id="name-home-team-fg1">Home Team</span>
+                        </div>
+                    </div>
 
-</div>
+                </div>
 
-<!--game#5  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game5">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg5" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg5">Away Team</span>
             </div>
         </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg5">
-                <span class="date-data" id ="date-data-pg5"> Date</span>
-                <span class="time-data" id ="time-data-pg5"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg5">0</span>
-                <span class="score-separator" id ="score-separator-pg5"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg5" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg5"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg5">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg5">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg5" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg5">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#6  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game6">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg6" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg6">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg6">
-                <span class="date-data" id ="date-data-pg6"> Date</span>
-                <span class="time-data" id ="time-data-pg6"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg6">0</span>
-                <span class="score-separator" id ="score-separator-pg6"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg6" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg6"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg6">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg6">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg6" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg6">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#7  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game7">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg7" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg7">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg7">
-                <span class="date-data" id ="date-data-pg7"> Date</span>
-                <span class="time-data" id ="time-data-pg7"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg7">0</span>
-                <span class="score-separator" id ="score-separator-pg7"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg7" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg7"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg7">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg7">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg7" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg7">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-
-<!--game#8  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game8">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg8" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg8">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg8">
-                <span class="date-data" id ="date-data-pg8"> Date</span>
-                <span class="time-data" id ="time-data-pg8"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg8">0</span>
-                <span class="score-separator" id ="score-separator-pg8"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg8" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg8"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg8">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg8">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg8" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg8">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#9  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game9">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg9" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg9">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg9">
-                <span class="date-data" id ="date-data-pg9"> Date</span>
-                <span class="time-data" id ="time-data-pg9"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg9">0</span>
-                <span class="score-separator" id ="score-separator-pg9"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg9" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg9"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg9">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg9">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg9" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg9">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#10  previous game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="previous-game10">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-pg10" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-pg10">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-pg10">
-                <span class="date-data" id ="date-data-pg10"> Date</span>
-                <span class="time-data" id ="time-data-pg10"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-pg10">0</span>
-                <span class="score-separator" id ="score-separator-pg10"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-pg10" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-pg10"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-pg10">Stadium name</span>
-                <span class = "city-location" id = "city-location-pg10">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-pg10" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-pg10">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
 
 
     </div>
 
-<!--div column futur game -->
-    <div class ="grid-example col s12 m6">
-        <div class ="sub-title-past-futur-game" id ="sub-title-past-futur-game">
-            <h3>Next 10 games</h3>
+    <footer class="page-footer indigo lighten-1">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">The Team</h5>
+              <p class="grey-text text-lighten-4"> Ibrahim Imran</p>
+              <p class="grey-text text-lighten-4"> Abdalla Hamdy</p>
+              <p class="grey-text text-lighten-4"> Miguel Jerome</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text fa fa-github" style="font-size:36px"></h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/abdallahamdy/sports-spot">sports-spot repository</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2022 Copyright Text
+          </div>
+        </div>
+      </footer>
 
-  <!--game#1 futur game table-->
-  <div class="row">
-    <div class ="game-table-stats" id ="futur-game1">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg1" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg1">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg1">
-                <span class="date-data" id ="date-data-fg1"> Date</span>
-                <span class="time-data" id ="time-data-fg1"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg1">0</span>
-                <span class="score-separator" id ="score-separator-fg1"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg1" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg1"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg1">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg1">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg1" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg1">Home Team</span>
-            </div>
-        </div>
-    
+    <script src="./assets/js/script.js"></script>
+
     </div>
 
-</div>      
+</body>
 
-<!--game#2 futur game table-->
-  <div class="row">
-    <div class ="game-table-stats" id ="futur-game2">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg2" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg2">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg2">
-                <span class="date-data" id ="date-data-fg2"> Date</span>
-                <span class="time-data" id ="time-data-fg2"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg2">0</span>
-                <span class="score-separator" id ="score-separator-fg2"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg2" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg2"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg2">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg2">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg2" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg2">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#3 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game3">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg3" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg3">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg3">
-                <span class="date-data" id ="date-data-fg3"> Date</span>
-                <span class="time-data" id ="time-data-fg3"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg3">0</span>
-                <span class="score-separator" id ="score-separator-fg3"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg3" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg3"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg3">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg3">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg3" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg3">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#4 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game4">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg4" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg4">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg4">
-                <span class="date-data" id ="date-data-fg4"> Date</span>
-                <span class="time-data" id ="time-data-fg4"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg4">0</span>
-                <span class="score-separator" id ="score-separator-fg4"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg4" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg4"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg4">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg4">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg4" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg4">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#5 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game5">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg5" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg5">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg5">
-                <span class="date-data" id ="date-data-fg5"> Date</span>
-                <span class="time-data" id ="time-data-fg5"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg5">0</span>
-                <span class="score-separator" id ="score-separator-fg5"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg5" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg5"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg5">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg5">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg5" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg5">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#6 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game6">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg6" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg6">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg6">
-                <span class="date-data" id ="date-data-fg6"> Date</span>
-                <span class="time-data" id ="time-data-fg6"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg6">0</span>
-                <span class="score-separator" id ="score-separator-fg6"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg6" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg6"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg6">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg6">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg6" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg6">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#7 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game7">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg7" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg7">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg7">
-                <span class="date-data" id ="date-data-fg7"> Date</span>
-                <span class="time-data" id ="time-data-fg7"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg7">0</span>
-                <span class="score-separator" id ="score-separator-fg7"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg7" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg7"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg7">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg7">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg7" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg7">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#8 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game8">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg8" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg8">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg8">
-                <span class="date-data" id ="date-data-fg8"> Date</span>
-                <span class="time-data" id ="time-data-fg8"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg8">0</span>
-                <span class="score-separator" id ="score-separator-fg8"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg8" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg8"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg8">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg8">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg8" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg8">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-<!--game#9 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game9">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg9" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg9">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg9">
-                <span class="date-data" id ="date-data-fg9"> Date</span>
-                <span class="time-data" id ="time-data-fg9"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg9">0</span>
-                <span class="score-separator" id ="score-separator-fg9"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg9" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg9"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg9">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg9">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg9" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg9">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-
-<!--game#10 futur game table-->
-<div class="row">
-    <div class ="game-table-stats" id ="futur-game10">
-<!-- away team logo left side and team name column-->
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-left-img-fg10" height ="48" src ="./assets/images/nfl.png" alt="NFL logo"> 
-            <div>
-                <span class ="name-away-team" id ="name-away-team-fg10">Away Team</span>
-            </div>
-        </div>
-<!--Game stats column for the date, time, teams scores, weather, stadium name and city name-->                            
-        <div class="col s12 m4 l8">
-            <div class = "date-time-data" id ="date-time-data-fg10">
-                <span class="date-data" id ="date-data-fg10"> Date</span>
-                <span class="time-data" id ="time-data-fg10"> Time</span>
-            </div>
-            <div>
-                <span class="score-away-team-data" id ="score-away-team-data-fg10">0</span>
-                <span class="score-separator" id ="score-separator-fg10"> -</span>
-                <span class="score-home-team-data" id ="score-home-team-data-fg10" > 0</span>
-            </div>
-            <div>
-                <span class="weather-data" id ="weather-data-fg10"> Current weather</span>
-            </div>
-            <div>
-                <span class = "stadium-location" id ="stadium-location-fg10">Stadium name</span>
-                <span class = "city-location" id = "city-location-fg10">City Name</span>
-             </div>
-        </div>
-<!-- home team logo right side and team name column-->                          
-        <div class="col s12 m4 l8">
-                <img class ="circle" id ="logo-right-img-fg10" height= "48" src="./assets/images/nfl.png" alt="NFL logo">
-            <div>
-                <span class ="name-home-team" id ="name-home-team-fg10">Home Team</span>
-            </div>
-        </div>
-    
-    </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-</div>
-
-
-
-            <footer class ="page-footer">
-                    <div class = "footer-layout">
-                        <span>&copy; Ibrahim Imran</span>
-                        <span>&copy; Abdalla Hamdy</span>
-                        <span>&copy; Miguel Jerome</span>
-                        <span>Sports Spot</span>
-                        <span><a href="https://github.com/abdallahamdy/sports-spot">Page Ressources Github</a> </span>
-                </div> 
-            </footer>
-        
-        <script src="./assets/js/script.js"></script> 
-
-    </div>
-    
-    </body>  
-</html>  
- 
+</html>
