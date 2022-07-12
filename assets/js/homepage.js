@@ -58,11 +58,50 @@ var fetchFixtures = function(chosenTeam) {
             console.log("Away Team: " + data.response[0].teams.away.name);
             console.log("VS.");
             console.log("Home Team: " + data.response[0].teams.home.name);
+            populateFixturesPage(data);
         });
     })
     .catch(err => {
         console.log(err);
     });
+}
+
+var populateFixturesPage = function(fixturesData){
+    var fixtureDataArray = fixturesData.response;
+    var fixturesList = [];
+    console.log(fixtureDataArray);
+    for(var i = 0; i < 5; i++){
+        var matchObj = {
+            homeTeam : fixtureDataArray[i].teams.home.name,
+            homeLogo : fixtureDataArray[i].teams.home.logo,
+            awayTeam : fixtureDataArray[i].teams.away.name,
+            awayLogo : fixtureDataArray[i].teams.home.logo,
+            matchDate : fixtureDataArray[i].fixture.date,
+            matchVenue : fixtureDataArray[i].fixture.venue.name,
+            matchCity : fixtureDataArray[i].fixture.venue.city
+        }
+        fixturesList.push(matchObj);
+    }
+    displayMatches(fixturesList);
+}
+
+var displayMatches = function (matchObjArray) {
+    for(var i = 0; i < matchObjArray.length; i++){
+        console.log("MATCH IS:");
+        console.log(matchObjArray[i].homeTeam + " VS " + matchObjArray[i].awayTeam)
+        console.log("HAPPENING AT: " + matchObjArray[i].matchDate);
+
+        var containerEl = $("<ul>");
+
+        var matchCard = $("<li>").addClass("match-card");
+
+        var date = $("<p>");
+
+        var taskSpan = $("<span>")
+          .addClass("badge badge-primary badge-pill")
+          .text(taskDate);
+
+    }
 }
 
 teamFormEl.addEventListener("submit", formSubmitHandler);
