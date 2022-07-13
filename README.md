@@ -40,7 +40,7 @@
 
 ## Sports Spot Web page and all resources
 
-Our Sports Spot website [this is the link](https://github.io/abdallahamdy/sports-spot) 
+Our Sports Spot website [this is the link](https://abdallahamdy.github.io/sports-spot/) 
 You can have access to the resources on our Sports Spot Web Page [this is the link](https://github.com/abdallahamdy/sports-spot) 
 
 ## The Web Developer for Sports Spot are:
