@@ -155,7 +155,6 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
 
         // Previous fixtures display in HTML
 
-
         var prevHomeLogo = document.createElement("img");
         prevHomeLogo.className = "prev-home-logo";
         prevHomeLogo.src = prevMatchObjects[i].homeLogo;
