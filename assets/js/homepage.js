@@ -103,13 +103,13 @@ var populateFixturesPage = function(fixturesData){
             homeScore : prevFixturesArr[i].score.fulltime.home,
         }
         var nextMatchObj = {
-            homeTeam : prevFixturesArr[i].teams.home.name,
-            homeLogo : prevFixturesArr[i].teams.home.logo,
-            awayTeam : prevFixturesArr[i].teams.away.name,
-            awayLogo : prevFixturesArr[i].teams.away.logo,
-            matchDate : prevFixturesArr[i].fixture.date,
-            matchVenue : prevFixturesArr[i].fixture.venue.name,
-            matchCity : prevFixturesArr[i].fixture.venue.city
+            homeTeam : nextFixturesArr[i].teams.home.name,
+            homeLogo : nextFixturesArr[i].teams.home.logo,
+            awayTeam : nextFixturesArr[i].teams.away.name,
+            awayLogo : nextFixturesArr[i].teams.away.logo,
+            matchDate : nextFixturesArr[i].fixture.date,
+            matchVenue : nextFixturesArr[i].fixture.venue.name,
+            matchCity : nextFixturesArr[i].fixture.venue.city
         }
         prevFixturesList.push(prevMatchObj);
         nextFixturesList.push(nextMatchObj);
@@ -120,6 +120,8 @@ var populateFixturesPage = function(fixturesData){
 var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     console.log("++++++++++++++++++++++-----++++++");
     console.log(prevMatchObjects);
+    console.log("++++++++++++++++++++++-----++++++");
+    console.log(nextMatchObjects);
 
     var prevFixturesDiv = document.createElement("div");
     prevFixturesDiv.className = "row prev-fixtures-div";
@@ -203,7 +205,7 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         spanElNext.className = "text-p-el";
 
         var scoreElNext = document.createElement("p");
-        var scoreTextNext = "0 - 0";
+        var scoreTextNext = "TBD";
         scoreElNext.textContent = scoreTextNext;
 
 

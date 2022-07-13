@@ -1,7 +1,7 @@
 ## Module 07: Sports Spot
 
 ![Sports-Spot-page1](./assets/images/ScreenShootMainPage1.png) 
-![Sports-Spot-page1](./assets/images/ScreenShootMainPage2.png) 
+<!-- ![Sports-Spot-page1](./assets/images/ScreenShootMainPage2.png)  -->
 
 ### Project Mock-up
 
