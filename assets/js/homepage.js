@@ -132,6 +132,8 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     nextFixturesUl.className = "next-ul";
 
     for(var i = 0; i < 5; i++){
+        // var prevListEl = $("<li>").addClass("prev-li");
+
         var prevListEl = document.createElement("li");
         prevListEl.className = "prev-li";
 
@@ -152,7 +154,20 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         nextAwayLogo.className = "next-home-logo";
         nextAwayLogo.src = nextMatchObjects[i].awayLogo;
 
-        prevListEl.appendChild(prevHomeLogo); 
+        var spanEl = document.createElement("span");
+        spanEl.className = "text-p-el";
+
+        var scoreEl = document.createElement("p");
+        scoreEl.textContent = "SCORE";
+
+        var dateEl = document.createElement("p");
+        dateEl.textContent = "DATE";
+
+        spanEl.appendChild(scoreEl);
+        spanEl.appendChild(dateEl);
+
+        prevListEl.appendChild(prevHomeLogo);
+        prevListEl.appendChild(spanEl);
         prevListEl.appendChild(prevAwayLogo);
         nextListEl.appendChild(nextHomeLogo);
         nextListEl.appendChild(nextAwayLogo);

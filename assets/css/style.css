@@ -12,6 +12,25 @@ html,
   min-width: 50%;  
   max-width: none;  
 }  
+
+.prev-fixtures-div .next-fixtures-div {
+  border: solid 10px red;
+}
+
+.text-p-el {
+  display: flex;
+  flex-direction: column;
+}
+
+li { 
+  display: flex;
+  flex-direction: row;
+}
+
+.page-content {
+  display: flex;
+  justify-content: space-between;
+}
    
 body   
 {  
