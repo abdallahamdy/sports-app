@@ -1,3 +1,8 @@
+:root {
+  --primary: #5c6bc0;
+  --border-radius: .3rem;
+}
+
 *::before,   
 *::after {   
   box-sizing: border-box;   
@@ -13,14 +18,53 @@ html,
   max-width: none;  
 }  
 
-.prev-fixtures-div .next-fixtures-div {
-  border: solid 10px red;
+.prev-fixtures-div, .next-fixtures-div {
+  display: flex;
+  width: auto;
+  justify-content: space-evenly;
 }
 
-.text-p-el {
+#footer-github{
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
+
+.text-p-el p{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.prev-li, .next-li {
+  display: flex;
+  /* padding: 10px;
+  margin: 10px; */
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.prev-ul, .next-ul{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.prev-ul h1, .next-ul h1{
+  font-size: 2rem;
+  color: var(--primary);
+  text-shadow: 5px 5px 5px  rgb(196, 199, 53);
+}
+
+
+.text-p-el p{
+  padding: 0%;
+  margin: 0%;
+}
+
+
 
 li { 
   display: flex;
@@ -29,7 +73,9 @@ li {
 
 .page-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  /* align-items: center;
+  flex-direction: column; */
 }
    
 body   
@@ -147,4 +193,63 @@ footer a{
 
 footer{
   color: rgb(226, 141, 141);
+}
+@media screen and (max-width: 1024px){
+
+
+
+  .prev-ul h1, .next-ul h1{
+    font-size: 1rem;
+    color: var(--primary);
+    text-shadow: 5px 5px 5px  rgb(196, 199, 53);
+  }
+  .text-p-el p{
+    font-size: 0.75rem;
+    color: var(--primary);
+    text-shadow: 5px 5px 5px  rgb(196, 199, 53);
+
+  }
+}
+
+@media screen and (max-width: 768px){
+  .prev-ul h1, .next-ul h1{
+    font-size: 1rem;
+  }
+
+  .page-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .prev-li, .next-li {
+    display: flex;
+    /* padding: 10px;
+    margin: 10px; */
+    justify-content:center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .prev-home-logo img, .prev-away-logo img, .next-home-logo img, .next-away-logo img{
+    padding: 15px;
+    width: 100%;
+    margin: 15px;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  .prev-ul, .next-ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: 100%; */
+  }
+  
+  .prev-ul h1, .next-ul h1{
+    width: 100%;
+  }
+
 }

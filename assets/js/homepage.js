@@ -98,7 +98,9 @@ var populateFixturesPage = function(fixturesData){
             awayLogo : prevFixturesArr[i].teams.away.logo,
             matchDate : prevFixturesArr[i].fixture.date,
             matchVenue : prevFixturesArr[i].fixture.venue.name,
-            matchCity : prevFixturesArr[i].fixture.venue.city
+            matchCity : prevFixturesArr[i].fixture.venue.city,
+            awayScore : prevFixturesArr[i].score.fulltime.away,
+            homeScore : prevFixturesArr[i].score.fulltime.home,
         }
         var nextMatchObj = {
             homeTeam : prevFixturesArr[i].teams.home.name,
@@ -120,10 +122,10 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     console.log(prevMatchObjects);
 
     var prevFixturesDiv = document.createElement("div");
-    prevFixturesDiv.className = "prev-fixtures-div";
+    prevFixturesDiv.className = "row prev-fixtures-div";
 
     var nextFixturesDiv = document.createElement("div");
-    nextFixturesDiv.className = "next-fixtures-div";
+    nextFixturesDiv.className = "row next-fixtures-div";
 
     var prevFixturesUl = document.createElement("ul");
     prevFixturesUl.className = "prev-ul";
@@ -131,14 +133,26 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     var nextFixturesUl = document.createElement("ul");
     nextFixturesUl.className = "next-ul";
 
+    var prevH1El = document.createElement("h1");
+    prevH1El.textContent = "Previous 5 games";
+    var nextH1El = document.createElement("h1");
+    nextH1El.textContent = "Next 5 games";
+
+    prevFixturesUl.appendChild(prevH1El);
+    nextFixturesUl.appendChild(nextH1El);
+    
     for(var i = 0; i < 5; i++){
-        // var prevListEl = $("<li>").addClass("prev-li");
 
         var prevListEl = document.createElement("li");
         prevListEl.className = "prev-li";
 
         var nextListEl = document.createElement("li");
         nextListEl.className = "next-li";
+
+
+
+        // Previous fixtures display in HTML
+
 
         var prevHomeLogo = document.createElement("img");
         prevHomeLogo.className = "prev-home-logo";
@@ -147,6 +161,37 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         prevAwayLogo.className = "prev-away-logo";
         prevAwayLogo.src = prevMatchObjects[i].awayLogo;
 
+        var spanElPrev = document.createElement("span");
+        spanElPrev.className = "text-p-el";
+
+        var scoreElPrev = document.createElement("p");
+        var scoreTextPrev = prevMatchObjects[i].homeScore + " - " + prevMatchObjects[i].awayScore;
+        scoreElPrev.textContent = scoreTextPrev;
+
+
+        var dateElPrev = document.createElement("p");
+        var dateTextPrev = prevMatchObjects[i].matchDate;
+        dateElPrev.textContent = dateTextPrev.slice(0 , 10);
+
+        var cityElPrev = document.createElement("p");
+        var cityTextPrev = prevMatchObjects[i].matchCity;
+        cityElPrev.textContent = cityTextPrev;
+
+        var stadiumElPrev = document.createElement("p");
+        var stadiumTextPrev = prevMatchObjects[i].matchVenue;
+        stadiumElPrev.textContent = stadiumTextPrev;
+
+        spanElPrev.appendChild(scoreElPrev);
+        spanElPrev.appendChild(dateElPrev);
+        spanElPrev.appendChild(cityElPrev);
+        spanElPrev.appendChild(stadiumElPrev);
+
+        prevListEl.appendChild(prevHomeLogo);
+        prevListEl.appendChild(spanElPrev);
+        prevListEl.appendChild(prevAwayLogo);
+
+        // Next fixtures display in HTML
+
         var nextHomeLogo = document.createElement("img");
         nextHomeLogo.className = "next-home-logo";
         nextHomeLogo.src = nextMatchObjects[i].homeLogo;
@@ -154,26 +199,42 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         nextAwayLogo.className = "next-home-logo";
         nextAwayLogo.src = nextMatchObjects[i].awayLogo;
 
-        var spanEl = document.createElement("span");
-        spanEl.className = "text-p-el";
+        var spanElNext = document.createElement("span");
+        spanElNext.className = "text-p-el";
 
-        var scoreEl = document.createElement("p");
-        scoreEl.textContent = "SCORE";
+        var scoreElNext = document.createElement("p");
+        var scoreTextNext = "0 - 0";
+        scoreElNext.textContent = scoreTextNext;
 
-        var dateEl = document.createElement("p");
-        dateEl.textContent = "DATE";
 
-        spanEl.appendChild(scoreEl);
-        spanEl.appendChild(dateEl);
+        var dateElNext = document.createElement("p");
+        var dateTextNext = nextMatchObjects[i].matchDate;
+        dateElNext.textContent = dateTextNext.slice(0 , 10);
 
-        prevListEl.appendChild(prevHomeLogo);
-        prevListEl.appendChild(spanEl);
-        prevListEl.appendChild(prevAwayLogo);
+        var cityElNext = document.createElement("p");
+        var cityTextNext = nextMatchObjects[i].matchCity;
+        cityElNext.textContent = cityTextNext;
+
+        var stadiumElNext = document.createElement("p");
+        var stadiumTextNext = nextMatchObjects[i].matchVenue;
+        stadiumElNext.textContent = stadiumTextNext;
+
+
+        spanElNext.appendChild(scoreElNext);
+        spanElNext.appendChild(dateElNext);
+        spanElNext.appendChild(cityElNext);
+        spanElNext.appendChild(stadiumElNext);
+
+
         nextListEl.appendChild(nextHomeLogo);
+        nextListEl.appendChild(spanElNext);
         nextListEl.appendChild(nextAwayLogo);
         
         prevFixturesUl.appendChild(prevListEl);
         nextFixturesUl.appendChild(nextListEl);
+
+
+
     }
 
     prevFixturesDiv.appendChild(prevFixturesUl);
