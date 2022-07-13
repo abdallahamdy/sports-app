@@ -3,8 +3,9 @@ var teamFormEl = document.querySelector(".button-submit");
 var nameInputEl = document.querySelector(".input-text");
 var repoContainerEl = document.querySelector("#repos-container");
 var repoSearchTerm = document.querySelector("#repo-search-term");
-//declared matchObj globally
-var matchObj;
+
+var pageContentEl = document.querySelector(".page-content");
+
 // When user submits team
 var formSubmitHandler = function(event) {
     event.preventDefault();
@@ -46,82 +47,125 @@ var fetchFixtures = function(chosenTeam, season) {
     console.log("Chosen team ID: ", chosenTeam.response[0].team.name);
     var teamID = chosenTeam.response[0].team.id;
 
-    // if(season == future){
-    //     season == "2022";
-    // }else{
-    //     season ==
-    // // }
-    
-    fetch("https://v3.football.api-sports.io/fixtures?team=" + teamID + "&season=2022", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "ef30dd863bb3a4a2e54972837f65102c"
-        }
-    })
-    .then(response => {
-        console.log(response);
-        response.json().then(function(data) {
-            console.log("Away Team: " + data.response[0].teams.away.name);
-            console.log("VS.");
-            console.log("Home Team: " + data.response[0].teams.home.name);
-            populateFixturesPage(data);
-        });
-    })
-    .catch(err => {
-        console.log(err);
+    Promise.all([
+        fetch('https://v3.football.api-sports.io/fixtures?team=' + teamID + '&season=2021', {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "v3.football.api-sports.io",
+                "x-rapidapi-key": "ef30dd863bb3a4a2e54972837f65102c"
+            }
+        }),
+        fetch('https://v3.football.api-sports.io/fixtures?team=' + teamID + '&season=2022',{
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "v3.football.api-sports.io",
+                "x-rapidapi-key": "ef30dd863bb3a4a2e54972837f65102c"
+            }
+        })
+    ]).then(function (responses) {
+        // Get a JSON object from each of the responses
+        return Promise.all(responses.map(function (response) {
+            return response.json();
+        }));
+    }).then(function (data) {
+        // Log the data to the console
+        // You would do something with both sets of data here
+        console.log(data);
+        populateFixturesPage(data);
+        
+    }).catch(function (error) {
+        // if there's an error, log it
+        console.log(error);
     });
+    
 }
 
 var populateFixturesPage = function(fixturesData){
-    var fixtureDataArray = fixturesData.response;
-    var fixturesList = [];
-    console.log(fixtureDataArray);
+    console.log("++++++++++++++");
+    console.log(fixturesData[0].response);
+
+    var prevFixturesArr = fixturesData[0].response;
+    var nextFixturesArr = fixturesData[1].response;
+
+    var prevFixturesList = [];
+    var nextFixturesList = [];
+
     for(var i = 0; i < 5; i++){
-        //declared matchObj globally so it can be accessed from displayMatches() and other functions 
-        matchObj = {
-            homeTeam : fixtureDataArray[i].teams.home.name,
-            homeLogo : fixtureDataArray[i].teams.home.logo,
-            awayTeam : fixtureDataArray[i].teams.away.name,
-            awayLogo : fixtureDataArray[i].teams.away.logo,
-            matchDate : fixtureDataArray[i].fixture.date,
-            matchVenue : fixtureDataArray[i].fixture.venue.name,
-            matchCity : fixtureDataArray[i].fixture.venue.city
+        var prevMatchObj = {
+            homeTeam : prevFixturesArr[i].teams.home.name,
+            homeLogo : prevFixturesArr[i].teams.home.logo,
+            awayTeam : prevFixturesArr[i].teams.away.name,
+            awayLogo : prevFixturesArr[i].teams.away.logo,
+            matchDate : prevFixturesArr[i].fixture.date,
+            matchVenue : prevFixturesArr[i].fixture.venue.name,
+            matchCity : prevFixturesArr[i].fixture.venue.city
         }
-        fixturesList.push(matchObj);
+        var nextMatchObj = {
+            homeTeam : prevFixturesArr[i].teams.home.name,
+            homeLogo : prevFixturesArr[i].teams.home.logo,
+            awayTeam : prevFixturesArr[i].teams.away.name,
+            awayLogo : prevFixturesArr[i].teams.away.logo,
+            matchDate : prevFixturesArr[i].fixture.date,
+            matchVenue : prevFixturesArr[i].fixture.venue.name,
+            matchCity : prevFixturesArr[i].fixture.venue.city
+        }
+        prevFixturesList.push(prevMatchObj);
+        nextFixturesList.push(nextMatchObj);
     }
-    displayMatches(fixturesList);
+    displayMatches(prevFixturesList, nextFixturesList);
 }
 
-var displayMatches = function (matchObjArray) {
-    for(var i = 0; i < matchObjArray.length; i++){
-        console.log("MATCH IS:");
-        console.log(matchObjArray[i].homeTeam + " VS " + matchObjArray[i].awayTeam)
-        console.log("HAPPENING AT: " + matchObjArray[i].matchDate);
+var displayMatches = function (prevMatchObjects, nextMatchObjects) {
+    console.log("++++++++++++++++++++++-----++++++");
+    console.log(prevMatchObjects);
 
-        var awayLogo = matchObj.awayLogo;
-        document.getElementById("logo-left-img-pg1").src = awayLogo;
+    var prevFixturesDiv = document.createElement("div");
+    prevFixturesDiv.className = "prev-fixtures-div";
+
+    var nextFixturesDiv = document.createElement("div");
+    nextFixturesDiv.className = "next-fixtures-div";
+
+    var prevFixturesUl = document.createElement("ul");
+    prevFixturesUl.className = "prev-ul";
+
+    var nextFixturesUl = document.createElement("ul");
+    nextFixturesUl.className = "next-ul";
+
+    for(var i = 0; i < 5; i++){
+        var prevListEl = document.createElement("li");
+        prevListEl.className = "prev-li";
+
+        var nextListEl = document.createElement("li");
+        nextListEl.className = "next-li";
+
+        var prevHomeLogo = document.createElement("img");
+        prevHomeLogo.className = "prev-home-logo";
+        prevHomeLogo.src = prevMatchObjects[i].homeLogo;
+        var prevAwayLogo = document.createElement("img");
+        prevAwayLogo.className = "prev-away-logo";
+        prevAwayLogo.src = prevMatchObjects[i].awayLogo;
+
+        var nextHomeLogo = document.createElement("img");
+        nextHomeLogo.className = "next-home-logo";
+        nextHomeLogo.src = nextMatchObjects[i].homeLogo;
+        var nextAwayLogo = document.createElement("img");
+        nextAwayLogo.className = "next-home-logo";
+        nextAwayLogo.src = nextMatchObjects[i].awayLogo;
+
+        prevListEl.appendChild(prevHomeLogo); 
+        prevListEl.appendChild(prevAwayLogo);
+        nextListEl.appendChild(nextHomeLogo);
+        nextListEl.appendChild(nextAwayLogo);
         
-        var homeLogo = matchObj.homeLogo;
-        document.getElementById("logo-right-img-pg1").src = homeLogo;
-
-        var matchDate = matchObj.matchDate;
-        document.getElementById("date-data-pg1").innerHTML = matchDate;
-
-        var stadiumName = matchObj.matchVenue;
-        document.getElementById("stadium-location-pg1").innerHTML = "Stadium: " + stadiumName;
-
-        // var containerEl = $("<ul>");
-
-        // var matchCard = $("<li>").addClass("match-card");
-
-        // var date = $("<p>");
-
-        // var taskSpan = $("<span>")
-        //   .addClass("badge badge-primary badge-pill")
-        //   .text(taskDate);
-
+        prevFixturesUl.appendChild(prevListEl);
+        nextFixturesUl.appendChild(nextListEl);
     }
+
+    prevFixturesDiv.appendChild(prevFixturesUl);
+    nextFixturesDiv.appendChild(nextFixturesUl);
+
+    pageContentEl.appendChild(prevFixturesDiv);
+    pageContentEl.appendChild(nextFixturesDiv);
 }
 
 //changed teamFormEl query selector to our button on HTML 
