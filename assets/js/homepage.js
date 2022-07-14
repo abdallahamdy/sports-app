@@ -80,6 +80,32 @@ var fetchFixtures = function(chosenTeam, season) {
     
 }
 
+var fetchWeather = function(name){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ name +'&appid=881b71ce57e0bfdb7dfc729ffa72bc98&units=metric')
+    .then(response => response.json())
+    .then(data => { 
+        var nameValue = data['name'];
+        var descValue = data['weather'][0]['description'];
+        var tempValue = data['main']['temp'];
+        console.log("TEMP VAL" + tempValue);
+        // weatherArr.push(tempValue);
+        console.log(data);
+        
+        populateWeather(tempValue);
+    })
+    
+    .catch(err => console.dir(err));
+    
+}
+
+var populateWeather = function(weatherData){
+    console.log(weatherData + "tewatherrsds data");
+    var weatherObj = {
+        cityWeather: weatherData
+    }
+    return weatherObj;
+}
+
 var populateFixturesPage = function(fixturesData){
     console.log("++++++++++++++");
     console.log(fixturesData[0].response);
@@ -100,7 +126,7 @@ var populateFixturesPage = function(fixturesData){
             matchVenue : prevFixturesArr[i].fixture.venue.name,
             matchCity : prevFixturesArr[i].fixture.venue.city,
             awayScore : prevFixturesArr[i].score.fulltime.away,
-            homeScore : prevFixturesArr[i].score.fulltime.home,   
+            homeScore : prevFixturesArr[i].score.fulltime.home 
         }
         var nextMatchObj = {
             homeTeam : nextFixturesArr[i].teams.home.name,
@@ -111,16 +137,15 @@ var populateFixturesPage = function(fixturesData){
             matchVenue : nextFixturesArr[i].fixture.venue.name,
             matchCity : nextFixturesArr[i].fixture.venue.city
         }
-        
-        fetchWeather(prevMatchObj.matchCity);
 
         prevFixturesList.push(prevMatchObj);
         nextFixturesList.push(nextMatchObj);
     }
+
     displayMatches(prevFixturesList, nextFixturesList);
 }
 
-
+//weather ARR 
 let weatherArr = [];
 
 var displayMatches = function (prevMatchObjects, nextMatchObjects) {
@@ -169,7 +194,7 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         prevAwayLogo.src = prevMatchObjects[i].awayLogo;
 
         var spanElPrev = document.createElement("span");
-        spanElPrev.className = "text-p-el";
+        spanElPrev.className = "text-p-el-" + i;
 
         var scoreElPrev = document.createElement("p");
         var scoreTextPrev = prevMatchObjects[i].homeScore + " - " + prevMatchObjects[i].awayScore;
@@ -188,13 +213,6 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         var stadiumTextPrev = prevMatchObjects[i].matchVenue;
         stadiumElPrev.textContent = stadiumTextPrev;
 
-        // WEATHER ARR HERE 
-        var weatherEl = document.createElement("p");
-        var weatherText = weatherArr;
-        weatherEl.textContent = weatherText;
-        console.log(weatherArr);
-
-        spanElPrev.appendChild(weatherEl);
         spanElPrev.appendChild(scoreElPrev);
         spanElPrev.appendChild(dateElPrev);
         spanElPrev.appendChild(cityElPrev);
@@ -220,6 +238,11 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
         var scoreTextNext = "TBD";
         scoreElNext.textContent = scoreTextNext;
 
+        //display weather through API (not working)
+        var weatherEl = document.createElement("p");
+        weatherEl.className = "weather-el-" + i;
+        weatherEl.textContent = i;
+        spanElPrev.appendChild(weatherEl);
 
         var dateElNext = document.createElement("p");
         var dateTextNext = nextMatchObjects[i].matchDate;
@@ -257,25 +280,4 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     pageContentEl.appendChild(nextFixturesDiv);
 }
 
-// openweatherAPI 
-let tempValue;
-function fetchWeather(name){
-    console.log("22222222222222");
-    console.log(name);
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ name +'&appid=881b71ce57e0bfdb7dfc729ffa72bc98&units=metric')
-    .then(response => response.json())
-    .then(data => {
-        var nameValue = data['name'];
-        var descValue = data['weather'][0]['description'];
-        tempValue = data['main']['temp'];
-        console.log("TEMP VAL" + tempValue);
-        weatherArr.push(tempValue);
-        console.log(data);
-    })
-    
-    .catch(err => console.dir(err));
-
-}
-
-//changed teamFormEl query selector to our button on HTML 
 teamFormEl.addEventListener("click", formSubmitHandler);
