@@ -43,6 +43,7 @@ var fetchTeam = function(team) {
     });
 }
 
+
 //my weather temperature API 
 var tempValueArr = [];
 // fetches weather data for a given city
@@ -53,9 +54,12 @@ var fetchWeather = function(name){
         tempValue = data['main']['temp'];
         console.log(data);
         tempValueArr.push(tempValue);
+        var weatherText = document.querySelector("#weather");
+        weatherText.textContent = "Todays weather in Ottawa: " + tempValue;
     })
     .catch(err => console.dir(err));
 }
+fetchWeather("ottawa");
 
 var fetchFixtures = function(chosenTeam, season) {
     console.log("Chosen team ID: ", chosenTeam.response[0].team.name);
@@ -116,7 +120,6 @@ var populateFixturesPage = function(fixturesData){
             awayScore : prevFixturesArr[i].score.fulltime.away,
             homeScore : prevFixturesArr[i].score.fulltime.home,
             //This is where I pass in all the city names 
-            cityWeather : fetchWeather(prevFixturesArr[i].fixture.venue.city)
         }
         var nextMatchObj = {
             homeTeam : nextFixturesArr[i].teams.home.name,
