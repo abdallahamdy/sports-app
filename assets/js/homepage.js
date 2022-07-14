@@ -111,9 +111,8 @@ var populateFixturesPage = function(fixturesData){
             matchVenue : nextFixturesArr[i].fixture.venue.name,
             matchCity : nextFixturesArr[i].fixture.venue.city
         }
-        var weatherObj = {
-            cityWeather: fetchWeather(prevMatchObj.matchCity)
-        }
+        
+        fetchWeather(prevMatchObj.matchCity);
 
         prevFixturesList.push(prevMatchObj);
         nextFixturesList.push(nextMatchObj);
@@ -261,6 +260,8 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
 // openweatherAPI 
 let tempValue;
 function fetchWeather(name){
+    console.log("22222222222222");
+    console.log(name);
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+ name +'&appid=881b71ce57e0bfdb7dfc729ffa72bc98&units=metric')
     .then(response => response.json())
     .then(data => {
