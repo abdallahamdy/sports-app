@@ -119,6 +119,14 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     console.log("++++++++++++++++++++++-----++++++");
     console.log(prevMatchObjects);
 
+    var existingPrevDiv = document.querySelector(".prev-fixtures-div");
+    var existingNextDiv = document.querySelector(".next-fixtures-div");
+
+    if(existingNextDiv || existingPrevDiv){
+        existingPrevDiv.remove();
+        existingNextDiv.remove();
+    }
+
     var prevFixturesDiv = document.createElement("div");
     prevFixturesDiv.className = "prev-fixtures-div";
 
