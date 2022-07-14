@@ -43,6 +43,20 @@ var fetchTeam = function(team) {
     });
 }
 
+//my weather temperature API 
+var tempValueArr = [];
+// fetches weather data for a given city
+var fetchWeather = function(name){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+name+'&appid=881b71ce57e0bfdb7dfc729ffa72bc98&units=metric')
+        .then(response => response.json())
+        .then(data => {
+        tempValue = data['main']['temp'];
+        console.log(data);
+        tempValueArr.push(tempValue);
+    })
+    .catch(err => console.dir(err));
+}
+
 var fetchFixtures = function(chosenTeam, season) {
     console.log("Chosen team ID: ", chosenTeam.response[0].team.name);
     var teamID = chosenTeam.response[0].team.id;
@@ -101,6 +115,8 @@ var populateFixturesPage = function(fixturesData){
             matchCity : prevFixturesArr[i].fixture.venue.city,
             awayScore : prevFixturesArr[i].score.fulltime.away,
             homeScore : prevFixturesArr[i].score.fulltime.home,
+            //This is where I pass in all the city names 
+            cityWeather : fetchWeather(prevFixturesArr[i].fixture.venue.city)
         }
         var nextMatchObj = {
             homeTeam : nextFixturesArr[i].teams.home.name,
@@ -123,7 +139,9 @@ var displayMatches = function (prevMatchObjects, nextMatchObjects) {
     console.log("++++++++++++++++++++++-----++++++");
     console.log(nextMatchObjects);
 
-
+    // this array prints out all the Temps I need
+    console.log(tempValueArr);
+    
     var existingPrevDiv = document.querySelector(".prev-fixtures-div");
     var existingNextDiv = document.querySelector(".next-fixtures-div");
 
